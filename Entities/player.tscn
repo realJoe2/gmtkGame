@@ -12,7 +12,7 @@ radius = 20.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 11
+collision_mask = 5
 script = ExtResource("1_tcnsb")
 
 [node name="Player Logic" type="Node" parent="." node_paths=PackedStringArray("circuit", "circuitButton")]
@@ -45,7 +45,7 @@ color = Color(0, 0.415686, 0.862745, 1)
 [node name="Health Component" parent="." instance=ExtResource("4_kee72")]
 
 [node name="Hitbox" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("5_prmdv")]
-collision_layer = 4
+collision_layer = 8
 collision_mask = 0
 healthComponent = NodePath("../Health Component")
 
@@ -59,8 +59,9 @@ offset_right = 309.0
 offset_bottom = 168.0
 text = "Circuit"
 
-[node name="Circuit" parent="." node_paths=PackedStringArray("circuitButton") instance=ExtResource("6_prmdv")]
+[node name="Circuit" parent="." node_paths=PackedStringArray("circuitButton", "wonderGun") instance=ExtResource("6_prmdv")]
 visible = false
 circuitButton = NodePath("../ShowCircuitButton")
+wonderGun = NodePath("../WonderGun")
 
 [connection signal="button_up" from="ShowCircuitButton" to="Player Logic" method="CircuitButton"]
