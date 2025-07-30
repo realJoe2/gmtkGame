@@ -5,6 +5,3 @@
 [node name="Game Manager" type="Node"]
 script = ExtResource("1_02mer")
 defaultLevel = "res://Levels/level_1.tscn"
-
-[node name="In Front" type="CanvasLayer" parent="."]
-layer = 3
