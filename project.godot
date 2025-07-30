@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="jamgame"
+config/name="Circuit Outbreak"
 run/main_scene="uid://ksrne4pvntgm"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://icon.svg"

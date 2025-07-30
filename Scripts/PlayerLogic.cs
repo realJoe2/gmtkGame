@@ -4,6 +4,7 @@ using System;
 public partial class PlayerLogic : Node
 {
     [Export] int walkSpeed = 100;
+    [Export] Node2D circuit;
 
     enum PlayerState
     {

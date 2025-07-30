@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://blsmfqsmydopy"]
+[gd_scene load_steps=8 format=3 uid="uid://blsmfqsmydopy"]
 
 [ext_resource type="Script" uid="uid://c12i1pdu3b4mx" path="res://Scripts/CharacterMovement.cs" id="1_tcnsb"]
 [ext_resource type="Script" uid="uid://h33urckvf6jo" path="res://Scripts/PlayerLogic.cs" id="2_gb1tc"]
 [ext_resource type="PackedScene" uid="uid://dq6sqtrbuydu3" path="res://Entities/wonder_gun.tscn" id="3_xd3k7"]
 [ext_resource type="PackedScene" uid="uid://c1whn108q27f1" path="res://Components/health_component.tscn" id="4_kee72"]
 [ext_resource type="PackedScene" uid="uid://tds7dh1i0mkq" path="res://Components/hitbox.tscn" id="5_prmdv"]
+[ext_resource type="PackedScene" uid="uid://c0gixes6vy7cm" path="res://Entities/circuit.tscn" id="6_prmdv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ypkcv"]
 radius = 20.0
@@ -14,14 +15,15 @@ collision_layer = 2
 collision_mask = 11
 script = ExtResource("1_tcnsb")
 
+[node name="Player Logic" type="Node" parent="." node_paths=PackedStringArray("circuit")]
+script = ExtResource("2_gb1tc")
+walkSpeed = 200
+circuit = NodePath("../Circuit")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ypkcv")
-
-[node name="Player Logic" type="Node" parent="."]
-script = ExtResource("2_gb1tc")
-walkSpeed = 200
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
@@ -48,3 +50,5 @@ healthComponent = NodePath("../Health Component")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_ypkcv")
+
+[node name="Circuit" parent="." instance=ExtResource("6_prmdv")]
