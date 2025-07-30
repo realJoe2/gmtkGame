@@ -5,6 +5,7 @@ public partial class PlayerLogic : Node
 {
     [Export] int walkSpeed = 100;
     [Export] Node2D circuit;
+    [Export] Button circuitButton;
 
     enum PlayerState
     {
@@ -39,6 +40,12 @@ public partial class PlayerLogic : Node
         }
     }
 
+    void CircuitButton()
+    {
+        circuitButton.Hide();
+        circuit.Show();
+        GetTree().Paused = true;
+    }
     void ChangeState(PlayerState s)
     {
         if (state == s)

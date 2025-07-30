@@ -15,10 +15,11 @@ collision_layer = 2
 collision_mask = 11
 script = ExtResource("1_tcnsb")
 
-[node name="Player Logic" type="Node" parent="." node_paths=PackedStringArray("circuit")]
+[node name="Player Logic" type="Node" parent="." node_paths=PackedStringArray("circuit", "circuitButton")]
 script = ExtResource("2_gb1tc")
 walkSpeed = 200
 circuit = NodePath("../Circuit")
+circuitButton = NodePath("../ShowCircuitButton")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -51,4 +52,15 @@ healthComponent = NodePath("../Health Component")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_ypkcv")
 
-[node name="Circuit" parent="." instance=ExtResource("6_prmdv")]
+[node name="ShowCircuitButton" type="Button" parent="."]
+offset_left = 250.0
+offset_top = 137.0
+offset_right = 309.0
+offset_bottom = 168.0
+text = "Circuit"
+
+[node name="Circuit" parent="." node_paths=PackedStringArray("circuitButton") instance=ExtResource("6_prmdv")]
+visible = false
+circuitButton = NodePath("../ShowCircuitButton")
+
+[connection signal="button_up" from="ShowCircuitButton" to="Player Logic" method="CircuitButton"]

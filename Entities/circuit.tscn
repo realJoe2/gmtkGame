@@ -1,6 +1,10 @@
-[gd_scene format=3 uid="uid://c0gixes6vy7cm"]
+[gd_scene load_steps=2 format=3 uid="uid://c0gixes6vy7cm"]
+
+[ext_resource type="Script" uid="uid://bqkq5xdwf5wrj" path="res://Scripts/Circuit.cs" id="1_0nxrs"]
 
 [node name="Circuit" type="Node2D"]
+process_mode = 2
+script = ExtResource("1_0nxrs")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
@@ -15,3 +19,12 @@ offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.376471)
+
+[node name="Finish Button" type="Button" parent="."]
+offset_left = 250.0
+offset_top = 137.0
+offset_right = 304.0
+offset_bottom = 168.0
+text = "Finish"
+
+[connection signal="button_up" from="Finish Button" to="." method="OnFinishButton"]
