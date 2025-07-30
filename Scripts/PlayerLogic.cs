@@ -16,17 +16,17 @@ public partial class PlayerLogic : Node
     CharacterBody2D characterBody;
     public override void _Ready()
     {
-        characterBody = (CharacterBody2D) GetParent();
+        characterBody = (CharacterBody2D)GetParent();
     }
 
     Vector2 inputDirection;
     public override void _Process(double delta)
     {
         inputDirection = Input.GetVector("Left", "Right", "Up", "Down");
-
         switch (state)
         {
             case PlayerState.Idle:
+                characterBody.Call("AddForce", Vector3.Zero);
                 break;
 
             case PlayerState.Walk:
@@ -34,6 +34,7 @@ public partial class PlayerLogic : Node
                 break;
 
             case PlayerState.Dead:
+                characterBody.Call("AddForce", Vector3.Zero);
                 break;
         }
     }
