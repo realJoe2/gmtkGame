@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ksrne4pvntgm"]
+
+[ext_resource type="Script" uid="uid://dis2r7w0wskjw" path="res://Scripts/GameManager.cs" id="1_02mer"]
+
+[node name="Game Manager" type="Node"]
+script = ExtResource("1_02mer")
+defaultLevel = "res://Levels/level_1.tscn"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(320, 180)

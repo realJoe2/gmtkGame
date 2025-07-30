@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfbagtswtai4b"]
+
+[ext_resource type="PackedScene" uid="uid://blsmfqsmydopy" path="res://Entities/player.tscn" id="1_n0qsc"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0qsc"]
+
+[node name="Level 1" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 647.0
+offset_bottom = 366.0
+color = Color(0.351563, 0.351563, 0.351563, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_n0qsc")]
+position = Vector2(204, 46)
+fallingForce = 40.0
+risingForce = 20.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 364)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_n0qsc")
