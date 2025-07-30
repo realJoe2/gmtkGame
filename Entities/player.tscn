@@ -8,15 +8,15 @@ radius = 20.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_tcnsb")
-fallingForce = 80.0
-risingForce = 40.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ypkcv")
 
 [node name="Player Logic" type="Node" parent="."]
 script = ExtResource("2_gb1tc")
-jumpHeight = 300
+walkSpeed = 200
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
