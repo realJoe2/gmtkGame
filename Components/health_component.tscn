@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1whn108q27f1"]
+
+[ext_resource type="Script" uid="uid://cg5mg1gunx2pk" path="res://Scripts/HealthComponent.cs" id="1_c2t11"]
+
+[node name="Health Component" type="Node"]
+script = ExtResource("1_c2t11")
+
+[node name="iFrames" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="iFrames" to="." method="OnTimerTimeout"]
