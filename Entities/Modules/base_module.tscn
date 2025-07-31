@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgw5tk5fqyppg"]
+
+[ext_resource type="PackedScene" uid="uid://bj41os8kol3lw" path="res://Components/drag_and_move.tscn" id="1_tpc7w"]
+[ext_resource type="Texture2D" uid="uid://bgbxmciatq6lq" path="res://Assets/Sprites/icon.svg" id="2_raxwa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8q6x5"]
+
+[node name="Module" type="Node2D"]
+
+[node name="DragAndMove" parent="." instance=ExtResource("1_tpc7w")]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_raxwa")
+
+[node name="Input" type="Area2D" parent="."]
+position = Vector2(-64, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Input"]
+shape = SubResource("CircleShape2D_8q6x5")
+
+[node name="Output" type="Area2D" parent="."]
+position = Vector2(64, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Output"]
+shape = SubResource("CircleShape2D_8q6x5")

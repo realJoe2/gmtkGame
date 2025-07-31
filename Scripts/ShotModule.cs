@@ -9,6 +9,7 @@ public partial class ShotModule : Module
         Bullet,
         Grenade,
         Laser,
-        Arrow
+        Arrow,
+        Battery
     }
 }

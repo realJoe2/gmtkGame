@@ -1,20 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bv5kcl53nnopp"]
+[gd_scene load_steps=3 format=3 uid="uid://dowhxvsoimd4c"]
 
-[ext_resource type="Script" uid="uid://dnlyfgpajnoex" path="res://Scripts/EffectModule.cs" id="1_ps571"]
-[ext_resource type="PackedScene" uid="uid://bj41os8kol3lw" path="res://Components/drag_and_move.tscn" id="2_o6fmp"]
-[ext_resource type="Texture2D" uid="uid://bgbxmciatq6lq" path="res://Assets/Sprites/icon.svg" id="3_pjyr4"]
+[ext_resource type="PackedScene" uid="uid://bgw5tk5fqyppg" path="res://Entities/Modules/base_module.tscn" id="1_am0e8"]
+[ext_resource type="Script" uid="uid://dnlyfgpajnoex" path="res://Scripts/EffectModule.cs" id="2_ps571"]
 
-[node name="Effect Module" type="Node2D"]
-script = ExtResource("1_ps571")
-
-[node name="DragAndMove" parent="." instance=ExtResource("2_o6fmp")]
-offset_left = -38.0
-offset_top = -38.0
-offset_right = 38.0
-offset_bottom = 39.0
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("3_pjyr4")
-
-[editable path="DragAndMove"]
+[node name="Effect Module" instance=ExtResource("1_am0e8")]
+script = ExtResource("2_ps571")

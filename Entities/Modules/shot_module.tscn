@@ -1,17 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdrbjyvvp16jr"]
+[gd_scene load_steps=3 format=3 uid="uid://d07ek8dqbn7jp"]
 
 [ext_resource type="Script" uid="uid://cv4y8fc8co8rw" path="res://Scripts/ShotModule.cs" id="1_8q6x5"]
-[ext_resource type="PackedScene" uid="uid://bj41os8kol3lw" path="res://Components/drag_and_move.tscn" id="2_qg6h8"]
-[ext_resource type="Texture2D" uid="uid://bgbxmciatq6lq" path="res://Assets/Sprites/icon.svg" id="3_671iq"]
+[ext_resource type="PackedScene" uid="uid://bgw5tk5fqyppg" path="res://Entities/Modules/base_module.tscn" id="1_ehg8l"]
 
-[node name="Shot Module" type="Node2D"]
+[node name="Shot Module" instance=ExtResource("1_ehg8l")]
 script = ExtResource("1_8q6x5")
-
-[node name="DragAndMove" parent="." instance=ExtResource("2_qg6h8")]
-offset_left = -64.0
-offset_top = -64.0
-offset_right = 64.0
-offset_bottom = 64.0
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_671iq")
