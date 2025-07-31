@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0gixes6vy7cm"]
+[gd_scene load_steps=7 format=3 uid="uid://c0gixes6vy7cm"]
 
 [ext_resource type="Script" uid="uid://bqkq5xdwf5wrj" path="res://Scripts/Circuit.cs" id="1_0nxrs"]
+[ext_resource type="PackedScene" uid="uid://dowhxvsoimd4c" path="res://Entities/Circuit Pieces/effect_piece.tscn" id="3_buxn6"]
+[ext_resource type="PackedScene" uid="uid://it3ci3kilkok" path="res://Entities/Circuit Pieces/modifier_piece.tscn" id="3_f3t6b"]
 [ext_resource type="Texture2D" uid="uid://nmodsqrpj32a" path="res://Assets/Sprites/batteryOff.png" id="3_fegee"]
-[ext_resource type="PackedScene" uid="uid://d07ek8dqbn7jp" path="res://Entities/Modules/shot_piece.tscn" id="3_qehe1"]
+[ext_resource type="PackedScene" uid="uid://d07ek8dqbn7jp" path="res://Entities/Circuit Pieces/shot_piece.tscn" id="3_qehe1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ehg8l"]
 
@@ -69,6 +71,15 @@ label_settings = SubResource("LabelSettings_ehg8l")
 
 [node name="Shot Piece" parent="." instance=ExtResource("3_qehe1")]
 position = Vector2(-105, -14)
+
+[node name="Effect Piece" parent="." instance=ExtResource("3_buxn6")]
+position = Vector2(137, -71)
+
+[node name="Modifier Piece" parent="." instance=ExtResource("3_f3t6b")]
+position = Vector2(-13, -91)
+
+[node name="Effect Piece2" parent="." instance=ExtResource("3_buxn6")]
+position = Vector2(157, 42)
 
 [connection signal="button_up" from="Finish Button" to="." method="OnFinishButton"]
 

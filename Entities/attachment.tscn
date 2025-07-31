@@ -41,9 +41,11 @@ scale = Vector2(0.416667, 0.416667)
 
 [node name="Connect Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_sl0se")
+volume_db = -10.0
 
 [node name="Disconnect Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_pxvf5")
+volume_db = -10.0
 
 [connection signal="area_entered" from="End" to="." method="Entered"]
 [connection signal="area_exited" from="End" to="." method="Exited"]

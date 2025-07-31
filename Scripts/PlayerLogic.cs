@@ -32,7 +32,7 @@ public partial class PlayerLogic : Node
                 break;
 
             case PlayerState.Walk:
-                characterBody.Call("AddForce", inputDirection * walkSpeed);
+                characterBody.Call("AddForce", inputDirection * walkSpeed * (float) delta * 100F);
                 break;
 
             case PlayerState.Dead:
