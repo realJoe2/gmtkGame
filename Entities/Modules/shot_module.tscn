@@ -1,7 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://d07ek8dqbn7jp"]
+[gd_scene load_steps=4 format=3 uid="uid://d07ek8dqbn7jp"]
 
 [ext_resource type="Script" uid="uid://cv4y8fc8co8rw" path="res://Scripts/ShotModule.cs" id="1_8q6x5"]
 [ext_resource type="PackedScene" uid="uid://bgw5tk5fqyppg" path="res://Entities/Modules/base_module.tscn" id="1_ehg8l"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_ehg8l"]
+font_color = Color(0, 0, 0, 1)
+
 [node name="Shot Module" instance=ExtResource("1_ehg8l")]
 script = ExtResource("1_8q6x5")
+
+[node name="Label" type="Label" parent="." index="4"]
+offset_left = -19.0
+offset_top = -32.0
+offset_right = 26.0
+offset_bottom = -9.0
+text = "shot"
+label_settings = SubResource("LabelSettings_ehg8l")
+
+[editable path="DragAndMove"]

@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0gixes6vy7cm"]
+[gd_scene load_steps=5 format=3 uid="uid://c0gixes6vy7cm"]
 
 [ext_resource type="Script" uid="uid://bqkq5xdwf5wrj" path="res://Scripts/Circuit.cs" id="1_0nxrs"]
-[ext_resource type="Script" uid="uid://cv4y8fc8co8rw" path="res://Scripts/ShotModule.cs" id="2_a3ojr"]
-[ext_resource type="Texture2D" uid="uid://bgbxmciatq6lq" path="res://Assets/Sprites/icon.svg" id="3_qehe1"]
+[ext_resource type="PackedScene" uid="uid://d07ek8dqbn7jp" path="res://Entities/Modules/shot_module.tscn" id="2_a3ojr"]
+[ext_resource type="PackedScene" uid="uid://dowhxvsoimd4c" path="res://Entities/Modules/effect_module.tscn" id="3_buxn6"]
+[ext_resource type="PackedScene" uid="uid://it3ci3kilkok" path="res://Entities/Modules/type_module.tscn" id="4_f3t6b"]
 
-[node name="Circuit" type="Node2D"]
+[node name="Circuit" type="Node2D" node_paths=PackedStringArray("circuitHead")]
 process_mode = 2
 script = ExtResource("1_0nxrs")
+circuitHead = NodePath("")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
@@ -30,12 +32,27 @@ offset_right = 304.0
 offset_bottom = 168.0
 text = "Finish"
 
-[node name="Battery" type="Node2D" parent="."]
-position = Vector2(0, 109)
-script = ExtResource("2_a3ojr")
+[node name="Effect Module" parent="." instance=ExtResource("3_buxn6")]
+position = Vector2(40, 96)
+
+[node name="Effect Module2" parent="." instance=ExtResource("3_buxn6")]
+position = Vector2(42, -112)
+
+[node name="Type Module" parent="." instance=ExtResource("4_f3t6b")]
+position = Vector2(184, -11)
+
+[node name="Shot Module" parent="." instance=ExtResource("2_a3ojr")]
+position = Vector2(-211, 38)
 shot = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Battery"]
-texture = ExtResource("3_qehe1")
+[node name="Label" parent="Shot Module" index="4"]
+offset_left = -27.0
+offset_top = -31.0
+offset_right = 30.0
+offset_bottom = -8.0
+text = "battery"
 
 [connection signal="button_up" from="Finish Button" to="." method="OnFinishButton"]
+
+[editable path="Shot Module"]
+[editable path="Shot Module/DragAndMove"]

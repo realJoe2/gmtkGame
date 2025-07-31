@@ -21,7 +21,7 @@ walkSpeed = 200
 circuit = NodePath("../Circuit")
 circuitButton = NodePath("../ShowCircuitButton")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." groups=["Camera"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ypkcv")
