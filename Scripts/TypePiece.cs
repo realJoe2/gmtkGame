@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class TypeModule : CircuitPiece
+public partial class TypePiece : CircuitPiece
 {
     [Export] Type type;
     enum Type

@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class ShotModule : CircuitPiece
+public partial class ShotPiece : CircuitPiece
 {
     [Export] Shot shot;
     enum Shot

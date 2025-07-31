@@ -19,7 +19,7 @@ public partial class Circuit : Node2D
     public void OnFinishButton()
     {
         EvaluateCircuit();
-        GetTree().Paused = false;
+        Engine.TimeScale = 1F;
         circuitButton.Show();
         Hide();
     }
