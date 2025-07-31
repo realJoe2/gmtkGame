@@ -1,15 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://moxfqvhq8bc2"]
+[gd_scene load_steps=6 format=3 uid="uid://moxfqvhq8bc2"]
 
 [ext_resource type="Script" uid="uid://n2jbnqvov8e1" path="res://Scripts/Attachment.cs" id="1_obbs3"]
 [ext_resource type="PackedScene" uid="uid://bj41os8kol3lw" path="res://Components/drag_and_move.tscn" id="2_dtxfd"]
+[ext_resource type="AudioStream" uid="uid://dg8rre8gmvhre" path="res://Assets/Sounds/Sound Effects/connect.wav" id="3_sl0se"]
+[ext_resource type="AudioStream" uid="uid://c0bws7dd2c2t7" path="res://Assets/Sounds/Sound Effects/disconnect.wav" id="4_pxvf5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dtxfd"]
 radius = 17.0294
 
-[node name="Attachment" type="Line2D" node_paths=PackedStringArray("end")]
+[node name="Attachment" type="Line2D" node_paths=PackedStringArray("end", "connect", "disconnect")]
 points = PackedVector2Array(0, 0, 25, 25)
 script = ExtResource("1_obbs3")
 end = NodePath("End")
+connect = NodePath("Connect Sound")
+disconnect = NodePath("Disconnect Sound")
 
 [node name="End" type="Area2D" parent="."]
 z_index = 1
@@ -40,9 +44,12 @@ offset_bottom = 23.0
 text = "out"
 
 [node name="Connect Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_sl0se")
 
 [node name="Disconnect Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_pxvf5")
 
 [connection signal="area_entered" from="End" to="." method="Entered"]
+[connection signal="area_exited" from="End" to="." method="Exited"]
 
 [editable path="End/DragAndMove"]

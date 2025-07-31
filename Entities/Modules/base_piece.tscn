@@ -31,6 +31,7 @@ offset_left = -32.0
 offset_top = -32.0
 offset_right = 32.0
 offset_bottom = 32.0
+careIfOffScreen = true
 
 [node name="VisibleOnScreenNotifier2D" parent="DragAndMove" index="0"]
 position = Vector2(32, 32)

@@ -4,12 +4,17 @@ using System;
 public partial class ShotPiece : CircuitPiece
 {
     [Export] Shot shot;
-    enum Shot
+    public enum Shot
     {
         Bullet,
         Grenade,
         Laser,
         Arrow,
+        Random,
         Battery
+    }
+    public byte GetShot()
+    {
+        return (byte) shot;
     }
 }

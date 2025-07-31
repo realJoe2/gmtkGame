@@ -3,14 +3,10 @@ using System;
 
 public partial class WeaponInfo : Resource
 {
-    public enum ShotType
-    {
-        Bullet, //single hitscan shot that deals decent damage
-        Grenade, //projectile that explodes after a short delay, dealing AOE
-        Laser, //beam that deals continuous damage
-        Arrow //deals low damage but pierces enemies
-    }
-    public ShotType type;
-    public int damagePerShot;
-    public int numberOfBarrels;
+    public byte shotType = 0;
+    public int damagePerShot = 1;
+    public int size = 1;
+    public int numberOfBarrels = 1;
+    public int shotSpeed = 1;
+    public int shotsPerSecond = 1;
 }
