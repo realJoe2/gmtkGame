@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0gixes6vy7cm"]
+[gd_scene load_steps=5 format=3 uid="uid://c0gixes6vy7cm"]
 
 [ext_resource type="Script" uid="uid://bqkq5xdwf5wrj" path="res://Scripts/Circuit.cs" id="1_0nxrs"]
-[ext_resource type="PackedScene" uid="uid://bv5kcl53nnopp" path="res://Entities/module.tscn" id="2_a3ojr"]
+[ext_resource type="PackedScene" uid="uid://bv5kcl53nnopp" path="res://Entities/Modules/effect_module.tscn" id="2_buxn6"]
+[ext_resource type="PackedScene" uid="uid://cdrbjyvvp16jr" path="res://Entities/Modules/shot_module.tscn" id="3_f3t6b"]
+[ext_resource type="PackedScene" uid="uid://cka3exntge1hg" path="res://Entities/Modules/type_module.tscn" id="4_fegee"]
 
 [node name="Circuit" type="Node2D"]
 process_mode = 2
@@ -29,10 +31,13 @@ offset_right = 304.0
 offset_bottom = 168.0
 text = "Finish"
 
-[node name="Module" parent="." instance=ExtResource("2_a3ojr")]
-position = Vector2(-144, -56)
+[node name="Effect Module" parent="." instance=ExtResource("2_buxn6")]
+position = Vector2(-174, -85)
 
-[node name="Module2" parent="." instance=ExtResource("2_a3ojr")]
-position = Vector2(118, -76)
+[node name="Shot Module" parent="." instance=ExtResource("3_f3t6b")]
+position = Vector2(151, -43)
+
+[node name="Type Module" parent="." instance=ExtResource("4_fegee")]
+position = Vector2(-81, 92)
 
 [connection signal="button_up" from="Finish Button" to="." method="OnFinishButton"]
