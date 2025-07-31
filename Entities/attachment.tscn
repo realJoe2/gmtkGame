@@ -5,8 +5,8 @@
 [ext_resource type="AudioStream" uid="uid://dg8rre8gmvhre" path="res://Assets/Sounds/Sound Effects/connect.wav" id="3_sl0se"]
 [ext_resource type="AudioStream" uid="uid://c0bws7dd2c2t7" path="res://Assets/Sounds/Sound Effects/disconnect.wav" id="4_pxvf5"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dtxfd"]
-radius = 17.0294
+[sub_resource type="CircleShape2D" id="CircleShape2D_sl0se"]
+radius = 10.0499
 
 [node name="Attachment" type="Line2D" node_paths=PackedStringArray("end", "connect", "disconnect")]
 points = PackedVector2Array(0, 0, 25, 25)
@@ -23,7 +23,7 @@ collision_mask = 64
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
-shape = SubResource("CircleShape2D_dtxfd")
+shape = SubResource("CircleShape2D_sl0se")
 
 [node name="DragAndMove" parent="End" instance=ExtResource("2_dtxfd")]
 z_index = 1
@@ -36,12 +36,8 @@ canRotate = false
 careIfOffScreen = true
 
 [node name="VisibleOnScreenNotifier2D" parent="End/DragAndMove" index="0"]
-scale = Vector2(0.566667, 0.566667)
-
-[node name="Label" type="Label" parent="End"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "out"
+position = Vector2(4.83333, 5.16667)
+scale = Vector2(0.416667, 0.416667)
 
 [node name="Connect Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_sl0se")

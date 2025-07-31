@@ -1,21 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://dowhxvsoimd4c"]
+[gd_scene load_steps=5 format=3 uid="uid://dowhxvsoimd4c"]
 
 [ext_resource type="PackedScene" uid="uid://bgw5tk5fqyppg" path="res://Entities/Modules/base_piece.tscn" id="1_hnyje"]
 [ext_resource type="Script" uid="uid://dnlyfgpajnoex" path="res://Scripts/EffectPiece.cs" id="2_n0nux"]
+[ext_resource type="Texture2D" uid="uid://cdtmddtycfnih" path="res://Assets/Sprites/redOn.png" id="3_mgiyk"]
+[ext_resource type="Texture2D" uid="uid://q2oc6ixmy7bv" path="res://Assets/Sprites/redOff.png" id="4_gnh64"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_am0e8"]
-font_color = Color(0, 0, 0, 1)
-
-[node name="Effect Piece" instance=ExtResource("1_hnyje")]
+[node name="Effect Piece" node_paths=PackedStringArray("label", "sprite") instance=ExtResource("1_hnyje")]
 script = ExtResource("2_n0nux")
+onSprite = ExtResource("3_mgiyk")
+label = NodePath("Label")
+offSprite = ExtResource("4_gnh64")
+sprite = NodePath("Sprite2D")
 
-[node name="Label" type="Label" parent="." index="4"]
-offset_left = -22.0
-offset_top = -27.0
-offset_right = 23.0
-offset_bottom = -4.0
-text = "double"
-label_settings = SubResource("LabelSettings_am0e8")
+[node name="Label" parent="." index="4"]
+horizontal_alignment = 1
 
 [editable path="DragAndMove"]
 [editable path="Attachment"]

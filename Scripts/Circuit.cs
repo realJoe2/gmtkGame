@@ -26,7 +26,7 @@ public partial class Circuit : Node2D
             {
                 property = (string)current.Call("GetModifier");
             }
-            else
+            else if (current is EffectPiece)
             {
                 switch (property)
                 {
@@ -54,12 +54,12 @@ public partial class Circuit : Node2D
         }
         //send results to wondergun as weaponinfo resource
         wonderGun.Call("SetInfo", info);
-        GD.Print("shot type: " + info.shotType);
+        /*GD.Print("shot type: " + info.shotType);
         GD.Print("damage: " + info.damagePerShot);
         GD.Print("size: " + info.size);
         GD.Print("number of barrels: " + info.numberOfBarrels);
         GD.Print("shot speed: " + info.shotSpeed);
-        GD.Print("shots per second: " + info.shotsPerSecond);
+        GD.Print("shots per second: " + info.shotsPerSecond);*/
     }
 
     public void OnFinishButton()

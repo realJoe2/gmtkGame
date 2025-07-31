@@ -17,7 +17,6 @@ script = ExtResource("1_tcnsb")
 
 [node name="Player Logic" type="Node" parent="." node_paths=PackedStringArray("circuit", "circuitButton")]
 script = ExtResource("2_gb1tc")
-walkSpeed = 200
 circuit = NodePath("../Circuit")
 circuitButton = NodePath("../ShowCircuitButton")
 
@@ -32,10 +31,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -17.0
-offset_top = -17.0
-offset_right = 15.0
-offset_bottom = 15.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2

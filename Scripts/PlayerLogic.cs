@@ -44,7 +44,7 @@ public partial class PlayerLogic : Node
     {
         circuitButton.Hide();
         circuit.Show();
-        Engine.TimeScale = .1F;
+        Engine.TimeScale = .03F;
     }
     void ChangeState(PlayerState s)
     {

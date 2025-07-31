@@ -39,23 +39,27 @@ public partial class DragAndMove : Control
     {
         if(!vis.IsOnScreen() && grabbed && careIfOffScreen)
             OffScreen();
-        
+
         if (Input.IsActionJustPressed("Grab") && mouseTouching)
         {
             grabbed = true;
             offset = GetGlobalMousePosition() - parent.GlobalPosition;
+            parent.ZIndex = 1;
         }
-        if (Input.IsActionJustReleased("Grab"))
+        if (Input.IsActionJustReleased("Grab") && grabbed == true)
+        {
             grabbed = false;
+            parent.ZIndex = 0;
+        }
 
         if (grabbed)
-        {
-            parent.GlobalPosition = GetGlobalMousePosition() - offset;
-            if (Input.IsActionJustPressed("RotateModule") && canRotate)
             {
-                parent.GlobalRotation += 45F * (Mathf.Pi / 180F);
+                parent.GlobalPosition = GetGlobalMousePosition() - offset;
+                if (Input.IsActionJustPressed("RotateModule") && canRotate)
+                {
+                    parent.GlobalRotation += 45F * (Mathf.Pi / 180F);
+                }
             }
-        }
         
     }
 }

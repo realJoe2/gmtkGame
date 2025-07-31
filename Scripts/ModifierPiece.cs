@@ -11,6 +11,10 @@ public partial class ModifierPiece : CircuitPiece
         ShotSpeed,
         ShotsPerSecond
     }
+    public override void _Ready()
+    {
+        label.Text = GetModifier();
+    }
     public string GetModifier()
     {
         switch (type)
