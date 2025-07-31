@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj41os8kol3lw"]
+
+[ext_resource type="Script" uid="uid://ceqgl271oeyxe" path="res://Scripts/DragAndMove.cs" id="1_snf8q"]
+
+[node name="DragAndMove" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+script = ExtResource("1_snf8q")
+
+[connection signal="mouse_entered" from="." to="." method="MouseEnter"]
+[connection signal="mouse_exited" from="." to="." method="MouseExit"]

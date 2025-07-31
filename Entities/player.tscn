@@ -38,6 +38,7 @@ offset_right = 15.0
 offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0.415686, 0.862745, 1)
 
 [node name="WonderGun" parent="." instance=ExtResource("3_xd3k7")]
