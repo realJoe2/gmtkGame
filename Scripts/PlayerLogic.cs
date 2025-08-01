@@ -62,11 +62,15 @@ public partial class PlayerLogic : Node
         }
     }
 
+    void HealthDepleted()
+    {
+        ChangeState(PlayerState.Dead);
+    }
     void CircuitButton()
     {
         circuitButton.Hide();
         circuit.Show();
-        Engine.TimeScale = .03F;
+        Engine.TimeScale = .067F;
     }
     void ChangeState(PlayerState s)
     {
@@ -83,6 +87,7 @@ public partial class PlayerLogic : Node
                 break;
 
             case PlayerState.Dead:
+                characterBody.Call("AddForce", Vector2.Zero);
                 break;
         }
     }

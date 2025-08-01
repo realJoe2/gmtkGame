@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0c7enxxid087"]
+[gd_scene load_steps=4 format=3 uid="uid://d0c7enxxid087"]
 
 [ext_resource type="PackedScene" uid="uid://th6fdm3jy82u" path="res://Entities/Shot Types/projectile.tscn" id="1_w2ibx"]
+[ext_resource type="PackedScene" uid="uid://kcx4jst02w22" path="res://Components/hurtbox.tscn" id="2_aw635"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qatvv"]
 
 [node name="Bullet" instance=ExtResource("1_w2ibx")]
 
@@ -17,3 +20,13 @@ offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Hurtbox" parent="." index="2" instance=ExtResource("2_aw635")]
+collision_layer = 0
+collision_mask = 16
+removeParentOnHit = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("CircleShape2D_qatvv")
+
+[connection signal="area_entered" from="Hurtbox" to="." method="OnAreaEntered"]

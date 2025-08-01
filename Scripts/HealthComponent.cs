@@ -4,38 +4,42 @@ using System;
 public partial class HealthComponent : Node
 {
     [Export] int maxHealth = 1;
-    [Export] Timer timer;
+    [Export] bool shake;
+    Timer shakeTimer;
+    [Export] Node2D sprite;
+
     int currentHealth;
     bool isDead = false;
-    bool hasIFrames = false;
 
     [Signal] public delegate void HealthDepletedEventHandler();
 
     public override void _Ready()
     {
         currentHealth = maxHealth;
+        shakeTimer = (Timer)GetNode("Timer");
+        //sprite = (Node2D) GetParent();
+    }
+
+
+    public override void _PhysicsProcess(double delta)
+    {
+        if (shakeTimer.TimeLeft > 0F && shake)
+        {
+            sprite.Rotation = Mathf.Sin((float)shakeTimer.TimeLeft) * (float) shakeTimer.TimeLeft;
+        }
     }
 
     public void TakeDamage(int damage)
     {
-        if (isDead || hasIFrames)
+        if (isDead)
             return;
+        shakeTimer.Start();
 
-        if (timer.WaitTime > 0.1)
-        {
-            hasIFrames = true;
-            timer.Start();
-        }
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
             isDead = true;
             EmitSignal(SignalName.HealthDepleted);
         }
-    }
-
-    void OnTimerTimeout()
-    {
-        hasIFrames = false;
     }
 }

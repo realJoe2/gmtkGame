@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://blsmfqsmydopy"]
+[gd_scene load_steps=37 format=3 uid="uid://blsmfqsmydopy"]
 
 [ext_resource type="Script" uid="uid://c12i1pdu3b4mx" path="res://Scripts/CharacterMovement.cs" id="1_tcnsb"]
 [ext_resource type="Script" uid="uid://h33urckvf6jo" path="res://Scripts/PlayerLogic.cs" id="2_gb1tc"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://dyu148spbss2a" path="res://Assets/Sprites/Player/playerWalkSide/0006.png" id="29_xaxei"]
 [ext_resource type="Texture2D" uid="uid://def7ubgocef6k" path="res://Assets/Sprites/Player/playerWalkSide/0007.png" id="30_ikfro"]
 [ext_resource type="Texture2D" uid="uid://1pp6x22hbxfk" path="res://Assets/Sprites/Player/playerWalkSide/0008.png" id="31_nyao0"]
+[ext_resource type="PackedScene" uid="uid://vuqadov1c3y" path="res://Components/level_changer.tscn" id="33_vknsg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_prmdv"]
 animations = [{
@@ -138,6 +139,7 @@ size = Vector2(43.22, 90)
 size = Vector2(40, 109.345)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = 1
 scale = Vector2(1, 0.993369)
 collision_layer = 2
 script = ExtResource("1_tcnsb")
@@ -165,11 +167,13 @@ sprite = NodePath("../Shadow/Player Sprite")
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_s1j76")
 
-[node name="Health Component" parent="." instance=ExtResource("4_kee72")]
+[node name="Health Component" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("4_kee72")]
+maxHealth = 5
+shake = true
+sprite = NodePath("../Shadow/Player Sprite")
 
 [node name="Hitbox" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("5_prmdv")]
 collision_layer = 8
-collision_mask = 0
 healthComponent = NodePath("../Health Component")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
@@ -185,7 +189,13 @@ text = "Circuit"
 
 [node name="Circuit" parent="." node_paths=PackedStringArray("circuitButton", "wonderGun") instance=ExtResource("6_prmdv")]
 visible = false
+z_index = 2
 circuitButton = NodePath("../ShowCircuitButton")
 wonderGun = NodePath("../WonderGun")
 
+[node name="LevelChanger" parent="." instance=ExtResource("33_vknsg")]
+nextLevelPath = "res://Levels/main_menu.tscn"
+
+[connection signal="HealthDepleted" from="Health Component" to="Player Logic" method="HealthDepleted"]
+[connection signal="HealthDepleted" from="Health Component" to="LevelChanger" method="Activate"]
 [connection signal="button_up" from="ShowCircuitButton" to="Player Logic" method="CircuitButton"]

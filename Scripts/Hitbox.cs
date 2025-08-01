@@ -5,8 +5,8 @@ public partial class Hitbox : Area2D
 {
     [Export] Node healthComponent;
 
-    public void Hit()
+    public void Hit(int damage)
     {
-        healthComponent.Call("TakeDamage");
+        healthComponent.Call("TakeDamage", damage);
     }
 }

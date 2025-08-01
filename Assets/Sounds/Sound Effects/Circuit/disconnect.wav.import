@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c0bws7dd2c2t7"
-path="res://.godot/imported/disconnect.wav-58a9f844cd2739762af9f139479a1798.sample"
+path="res://.godot/imported/disconnect.wav-10fac1175bf5448079af45be4b7149e0.sample"
 
 [deps]
 
-source_file="res://Assets/Sounds/Sound Effects/disconnect.wav"
-dest_files=["res://.godot/imported/disconnect.wav-58a9f844cd2739762af9f139479a1798.sample"]
+source_file="res://Assets/Sounds/Sound Effects/Circuit/disconnect.wav"
+dest_files=["res://.godot/imported/disconnect.wav-10fac1175bf5448079af45be4b7149e0.sample"]
 
 [params]
 

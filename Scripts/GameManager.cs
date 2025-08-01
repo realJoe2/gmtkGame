@@ -25,7 +25,7 @@ public partial class GameManager : Node
         }
 
         if (currentLevel != null)
-            currentLevel.Free();
+            currentLevel.QueueFree();
 
         nextLevel = (PackedScene)ResourceLoader.Load(levelPath);
         currentLevel = nextLevel.Instantiate();

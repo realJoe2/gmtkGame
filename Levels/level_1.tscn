@@ -16,4 +16,28 @@ position = Vector2(204, 46)
 
 [node name="Walker" parent="." instance=ExtResource("2_dilhk")]
 position = Vector2(564, 93)
-attackDistance = 1.0
+attackDistance = 100.0
+
+[node name="Walker2" parent="." instance=ExtResource("2_dilhk")]
+position = Vector2(476, 226)
+attackDistance = 100.0
+
+[node name="Walker3" parent="." instance=ExtResource("2_dilhk")]
+position = Vector2(363, 247)
+attackDistance = 100.0
+
+[node name="Walker4" parent="." instance=ExtResource("2_dilhk")]
+position = Vector2(237, 275)
+attackDistance = 100.0
+
+[node name="Walker5" parent="." instance=ExtResource("2_dilhk")]
+position = Vector2(170, 284)
+attackDistance = 100.0
+
+[node name="Walker6" parent="." instance=ExtResource("2_dilhk")]
+position = Vector2(74, 209)
+attackDistance = 100.0
+
+[node name="Walker7" parent="." instance=ExtResource("2_dilhk")]
+position = Vector2(74, 209)
+attackDistance = 100.0

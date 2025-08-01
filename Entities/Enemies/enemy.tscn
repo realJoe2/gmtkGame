@@ -4,16 +4,17 @@
 [ext_resource type="PackedScene" uid="uid://c1whn108q27f1" path="res://Components/health_component.tscn" id="3_4jf10"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_csyt6"]
-radius = 63.1269
+radius = 56.0
 
 [node name="Enemy" type="Node2D"]
 
-[node name="Hitbox" parent="." instance=ExtResource("2_6rqwt")]
+[node name="Hitbox" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("2_6rqwt")]
+collision_layer = 16
+healthComponent = NodePath("../Health Component")
 
 [node name="Hull" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_csyt6")
 
 [node name="Health Component" parent="." instance=ExtResource("3_4jf10")]
 
-[node name="Timer" type="Timer" parent="Health Component"]
-wait_time = 0.05
+[editable path="Health Component"]

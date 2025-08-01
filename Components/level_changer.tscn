@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://vuqadov1c3y"]
+
+[ext_resource type="Script" uid="uid://bxnnrcbx5h7f8" path="res://Scripts/LevelChanger.cs" id="1_71sww"]
+
+[node name="LevelChanger" type="Node"]
+script = ExtResource("1_71sww")

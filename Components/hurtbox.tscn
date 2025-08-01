@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://kcx4jst02w22"]
+
+[ext_resource type="Script" uid="uid://bku2lq5k7inm6" path="res://Scripts/Hurtbox.cs" id="1_urf2u"]
+
+[node name="Hurtbox" type="Area2D"]
+monitorable = false
+script = ExtResource("1_urf2u")
+damage = 1
+
+[connection signal="area_entered" from="." to="." method="OnEnter"]

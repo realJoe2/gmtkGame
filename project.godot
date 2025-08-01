@@ -39,6 +39,7 @@ folder_colors={
 
 Camera=""
 Level=""
+GameManager=""
 
 [input]
 
