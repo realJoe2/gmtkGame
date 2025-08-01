@@ -15,7 +15,7 @@ public partial class Circuit : Node2D
         info = new WeaponInfo();
         current = circuitHead.inputPiece;
         string property = "";
-        while (current != circuitHead && current != null && terminator < 32)
+        while (current != circuitHead && current != null)
         {
             if (current is ShotPiece)
             {
@@ -36,9 +36,6 @@ public partial class Circuit : Node2D
                     case "damage":
                         info.damagePerShot *= 2;
                         break;
-                    case "size":
-                        info.size *= 2;
-                        break;
                     case "shotSpeed":
                         info.shotSpeed *= 2;
                         break;
@@ -52,14 +49,14 @@ public partial class Circuit : Node2D
             current = current.inputPiece;
             terminator++;
         }
+
+        if (current == null)
+        {
+            GD.Print("Set as default");
+            info = new WeaponInfo();
+        }
         //send results to wondergun as weaponinfo resource
-        wonderGun.Call("SetInfo", info);
-        /*GD.Print("shot type: " + info.shotType);
-        GD.Print("damage: " + info.damagePerShot);
-        GD.Print("size: " + info.size);
-        GD.Print("number of barrels: " + info.numberOfBarrels);
-        GD.Print("shot speed: " + info.shotSpeed);
-        GD.Print("shots per second: " + info.shotsPerSecond);*/
+            wonderGun.Call("SetInfo", info);
     }
 
     public void OnFinishButton()

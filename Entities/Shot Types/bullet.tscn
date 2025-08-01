@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://th6fdm3jy82u"]
+[gd_scene load_steps=2 format=3 uid="uid://d0c7enxxid087"]
 
-[node name="Bullet" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://th6fdm3jy82u" path="res://Entities/Shot Types/projectile.tscn" id="1_w2ibx"]
+
+[node name="Bullet" instance=ExtResource("1_w2ibx")]
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

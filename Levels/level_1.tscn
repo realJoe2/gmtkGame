@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfbagtswtai4b"]
+[gd_scene load_steps=3 format=3 uid="uid://dfbagtswtai4b"]
 
 [ext_resource type="PackedScene" uid="uid://blsmfqsmydopy" path="res://Entities/player.tscn" id="1_n0qsc"]
+[ext_resource type="PackedScene" uid="uid://do5hjvbpwumhp" path="res://Entities/Enemies/walker.tscn" id="2_dilhk"]
 
-[node name="Level 1" type="Node2D"]
+[node name="Level 1" type="Node2D" groups=["Level"]]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 647.0
@@ -12,3 +13,7 @@ color = Color(0.351563, 0.351563, 0.351563, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_n0qsc")]
 position = Vector2(204, 46)
+
+[node name="Walker" parent="." instance=ExtResource("2_dilhk")]
+position = Vector2(564, 93)
+attackDistance = 1.0

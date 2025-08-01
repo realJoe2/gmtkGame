@@ -29,6 +29,8 @@ public abstract partial class CircuitPiece : Node2D
         }
         //GD.Print(i);
         inputPiece = i;
+        
+        //set sprite
         if (inputPiece == null)
         {
             sprite.Texture = offSprite;

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nmodsqrpj32a"
-path="res://.godot/imported/batteryOff.png-54a14a739d0ca92b83e67dcbfb1a1d7c.ctex"
+uid="uid://ds1jf1u800mhl"
+path="res://.godot/imported/0006.png-3dc142f71e2d86c916cea1c2ad57deae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/batteryOff.png"
-dest_files=["res://.godot/imported/batteryOff.png-54a14a739d0ca92b83e67dcbfb1a1d7c.ctex"]
+source_file="res://Assets/Sprites/Player/playerWalkForward/0006.png"
+dest_files=["res://.godot/imported/0006.png-3dc142f71e2d86c916cea1c2ad57deae.ctex"]
 
 [params]
 

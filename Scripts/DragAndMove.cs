@@ -57,7 +57,7 @@ public partial class DragAndMove : Control
                 parent.GlobalPosition = GetGlobalMousePosition() - offset;
                 if (Input.IsActionJustPressed("RotateModule") && canRotate)
                 {
-                    parent.GlobalRotation += 45F * (Mathf.Pi / 180F);
+                    parent.GlobalRotation -= 45F * (Mathf.Pi / 180F);
                 }
             }
         

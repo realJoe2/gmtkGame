@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdtmddtycfnih"
-path="res://.godot/imported/redOn.png-61c42b32802412a2343d49db682689ae.ctex"
+uid="uid://bduyq32anl6t3"
+path="res://.godot/imported/0001.png-b15536f717a46df623159893e82cd1a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/redOn.png"
-dest_files=["res://.godot/imported/redOn.png-61c42b32802412a2343d49db682689ae.ctex"]
+source_file="res://Assets/Sprites/Player/playerWalkBack/0001.png"
+dest_files=["res://.godot/imported/0001.png-b15536f717a46df623159893e82cd1a0.ctex"]
 
 [params]
 

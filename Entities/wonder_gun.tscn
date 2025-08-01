@@ -1,12 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://dq6sqtrbuydu3"]
+[gd_scene load_steps=4 format=3 uid="uid://dq6sqtrbuydu3"]
 
 [ext_resource type="Script" uid="uid://wgrcbbakbyp1" path="res://Scripts/WonderGun.cs" id="1_7dnqo"]
 [ext_resource type="Texture2D" uid="uid://bgbxmciatq6lq" path="res://Assets/Sprites/icon.svg" id="2_e6pv4"]
+[ext_resource type="PackedScene" uid="uid://d0c7enxxid087" path="res://Entities/Shot Types/bullet.tscn" id="2_ft12q"]
 
-[node name="WonderGun" type="Node2D"]
+[node name="WonderGun" type="Node2D" node_paths=PackedStringArray("delayTimer")]
 script = ExtResource("1_7dnqo")
+delayTimer = NodePath("DelayTimer")
+distanceFromPlayer = 38
+bulletResource = ExtResource("2_ft12q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(65, 0)
-scale = Vector2(1, 0.242188)
+visible = false
+position = Vector2(20, 1.19209e-07)
+scale = Vector2(0.304688, 0.117188)
 texture = ExtResource("2_e6pv4")
+
+[node name="DelayTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="DelayTimer" to="." method="OnTimerTimeout"]

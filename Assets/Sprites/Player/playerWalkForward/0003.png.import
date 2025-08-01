@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wbxp88gy5mu"
-path="res://.godot/imported/yellowOff.png-5ab3b884591fc9cf00171107e3fb0559.ctex"
+uid="uid://dm4hecjju7tq7"
+path="res://.godot/imported/0003.png-b6266789cf9a3dda499b6748154f22fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/yellowOff.png"
-dest_files=["res://.godot/imported/yellowOff.png-5ab3b884591fc9cf00171107e3fb0559.ctex"]
+source_file="res://Assets/Sprites/Player/playerWalkForward/0003.png"
+dest_files=["res://.godot/imported/0003.png-b6266789cf9a3dda499b6748154f22fc.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q2oc6ixmy7bv"
-path="res://.godot/imported/redOff.png-aafccd1c832c5c1bdcfabd780a46a354.ctex"
+uid="uid://d1x623i55j8tf"
+path="res://.godot/imported/yellowOn.png-d6371d7fdcb52110fdb6bf618804b0ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/redOff.png"
-dest_files=["res://.godot/imported/redOff.png-aafccd1c832c5c1bdcfabd780a46a354.ctex"]
+source_file="res://Assets/Sprites/Circuit/yellowOn.png"
+dest_files=["res://.godot/imported/yellowOn.png-d6371d7fdcb52110fdb6bf618804b0ed.ctex"]
 
 [params]
 

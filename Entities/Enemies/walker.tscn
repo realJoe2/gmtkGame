@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://do5hjvbpwumhp"]
+
+[ext_resource type="PackedScene" uid="uid://daac2ps8j60pf" path="res://Entities/Enemies/enemy.tscn" id="1_wipqw"]
+[ext_resource type="Script" uid="uid://cfpx3uf4jic3t" path="res://Scripts/Walker.cs" id="2_f2k3p"]
+[ext_resource type="Texture2D" uid="uid://bgbxmciatq6lq" path="res://Assets/Sprites/icon.svg" id="2_v7bej"]
+
+[node name="Walker" instance=ExtResource("1_wipqw")]
+script = ExtResource("2_f2k3p")
+attackDistance = 120.0
+moveSpeed = 1
+
+[node name="Icon2" type="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_v7bej")

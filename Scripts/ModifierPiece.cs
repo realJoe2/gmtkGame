@@ -7,7 +7,6 @@ public partial class ModifierPiece : CircuitPiece
     public enum Modifier
     {
         Damage,
-        Size,
         ShotSpeed,
         ShotsPerSecond
     }
@@ -21,8 +20,6 @@ public partial class ModifierPiece : CircuitPiece
         {
             case Modifier.Damage:
                 return "damage";
-            case Modifier.Size:
-                return "size";
             case Modifier.ShotSpeed:
                 return "shotSpeed";
             default:

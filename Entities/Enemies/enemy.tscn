@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://daac2ps8j60pf"]
+
+[ext_resource type="PackedScene" uid="uid://tds7dh1i0mkq" path="res://Components/hitbox.tscn" id="2_6rqwt"]
+[ext_resource type="PackedScene" uid="uid://c1whn108q27f1" path="res://Components/health_component.tscn" id="3_4jf10"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_csyt6"]
+radius = 63.1269
+
+[node name="Enemy" type="Node2D"]
+
+[node name="Hitbox" parent="." instance=ExtResource("2_6rqwt")]
+
+[node name="Hull" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_csyt6")
+
+[node name="Health Component" parent="." instance=ExtResource("3_4jf10")]
+
+[node name="Timer" type="Timer" parent="Health Component"]
+wait_time = 0.05

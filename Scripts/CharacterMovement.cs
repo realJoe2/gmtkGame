@@ -12,11 +12,11 @@ public partial class CharacterMovement : CharacterBody2D
         momentum = Velocity;
 
         //apply drag
-        if (Mathf.Abs(momentum.X) > 0F)
+        if (Mathf.Abs(momentum.X) > .1F)
             momentum.X -= momentum.X * dragForce;
         else
             momentum.X = 0F;
-        if (Mathf.Abs(momentum.Y) > 0F)
+        if (Mathf.Abs(momentum.Y) > .1F)
             momentum.Y -= momentum.Y * dragForce;
         else
             momentum.Y = 0F;
