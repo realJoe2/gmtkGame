@@ -13,7 +13,7 @@ public partial class WonderGun : Node2D
     WeaponInfo stats;
 
     [Export] Timer delayTimer;
-    [Export] int distanceFromPlayer = 50;
+    const int distanceFromPlayer = 50;
 
     [Export] PackedScene bulletResource;
     [Export] PackedScene grenadeResource;
@@ -71,7 +71,7 @@ public partial class WonderGun : Node2D
         switch (stats.shotType)
         {
             case 0:
-                shot = (Bullet)bulletResource.Instantiate();
+                shot = (Bullet) bulletResource.Instantiate();
                 break;
             case 1:
                 //shot = (Grenade)bulletResource.Instantiate();

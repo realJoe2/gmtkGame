@@ -38,7 +38,6 @@ region_rect = Rect2(20, 20, 20, 20)
 
 [node name="Attachment" parent="." instance=ExtResource("3_64puy")]
 position = Vector2(27, 0)
-default_color = Color(0.17, 0.17, 0.17, 1)
 firstPointOffset = 30.0
 
 [node name="Label" type="Label" parent="."]

@@ -1,43 +1,363 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfbagtswtai4b"]
+[gd_scene load_steps=9 format=3 uid="uid://dfbagtswtai4b"]
 
 [ext_resource type="PackedScene" uid="uid://blsmfqsmydopy" path="res://Entities/player.tscn" id="1_n0qsc"]
-[ext_resource type="PackedScene" uid="uid://do5hjvbpwumhp" path="res://Entities/Enemies/walker.tscn" id="2_dilhk"]
+[ext_resource type="Texture2D" uid="uid://58npia5dhva1" path="res://Assets/Sprites/Environment/wall.png" id="2_rf6l5"]
+[ext_resource type="Texture2D" uid="uid://bimi6daiqelhg" path="res://Assets/Sprites/Environment/floor.png" id="3_3mhv4"]
+[ext_resource type="LabelSettings" uid="uid://bc3pjpcnx5m43" path="res://Assets/Label Settings/subtitle.tres" id="4_syshm"]
+[ext_resource type="Script" uid="uid://bco43r3s1jkn5" path="res://Scripts/LevelTimeLabel.cs" id="5_rfktq"]
+[ext_resource type="Script" uid="uid://k7f860m0mg5l" path="res://Scripts/EnemySpawner.cs" id="6_rfktq"]
+[ext_resource type="PackedScene" uid="uid://do5hjvbpwumhp" path="res://Entities/Enemies/walker.tscn" id="7_0urlm"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_syshm"]
 
 [node name="Level 1" type="Node2D" groups=["Level"]]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 647.0
-offset_bottom = 366.0
+z_index = -1
+offset_left = -1057.0
+offset_top = -833.0
+offset_right = 2404.0
+offset_bottom = 2344.0
 mouse_filter = 2
-color = Color(0.351563, 0.351563, 0.351563, 1)
+color = Color(0.0846899, 0.0846899, 0.0846899, 1)
+
+[node name="Floor" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+z_index = -1
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(256, 0)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(512, 0)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(767, 0)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(1023, 0)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(1279, 0)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D7" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(0, 256)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D8" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(256, 256)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D9" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(512, 256)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D10" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(767, 256)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D11" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(1023, 256)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D12" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(1279, 256)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D13" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(0, 512)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D14" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(256, 512)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D15" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(512, 512)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D16" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(767, 512)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D17" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(1023, 512)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D18" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(1279, 512)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D19" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(0, 768)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D20" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(256, 768)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D21" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(512, 768)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D22" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(767, 768)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D23" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(1023, 768)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D24" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(1279, 768)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D25" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(0, 1024)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D26" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(256, 1024)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D27" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(512, 1024)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D28" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(767, 1024)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D29" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(1023, 1024)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D30" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(1279, 1024)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D31" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(0, 1280)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D32" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(256, 1280)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D33" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(512, 1280)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D34" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(767, 1280)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D35" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(1023, 1280)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Sprite2D36" type="Sprite2D" parent="Floor"]
+z_index = -1
+position = Vector2(1279, 1280)
+texture = ExtResource("3_3mhv4")
+region_rect = Rect2(1, 1, 4000, 4000)
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Wall" type="Sprite2D" parent="Walls"]
+position = Vector2(-160, 384)
+texture = ExtResource("2_rf6l5")
+
+[node name="Wall2" type="Sprite2D" parent="Walls"]
+position = Vector2(-160, 896)
+texture = ExtResource("2_rf6l5")
+
+[node name="Wall3" type="Sprite2D" parent="Walls"]
+position = Vector2(1439, 384)
+texture = ExtResource("2_rf6l5")
+
+[node name="Wall4" type="Sprite2D" parent="Walls"]
+position = Vector2(1439, 896)
+texture = ExtResource("2_rf6l5")
+
+[node name="Wall5" type="Sprite2D" parent="Walls"]
+position = Vector2(959, -160)
+rotation = 1.5708
+texture = ExtResource("2_rf6l5")
+
+[node name="Wall6" type="Sprite2D" parent="Walls"]
+position = Vector2(320, -160)
+rotation = 1.5708
+texture = ExtResource("2_rf6l5")
+
+[node name="Wall7" type="Sprite2D" parent="Walls"]
+position = Vector2(959, 1440)
+rotation = 1.5708
+texture = ExtResource("2_rf6l5")
+
+[node name="Wall8" type="Sprite2D" parent="Walls"]
+position = Vector2(320, 1440)
+rotation = 1.5708
+texture = ExtResource("2_rf6l5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+position = Vector2(603, -130)
+rotation = 3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_syshm")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Walls"]
+position = Vector2(-128, 51)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2"]
+shape = SubResource("WorldBoundaryShape2D_syshm")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
+position = Vector2(1408, 198)
+rotation = -1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3"]
+shape = SubResource("WorldBoundaryShape2D_syshm")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Walls"]
+position = Vector2(551, 1409)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4"]
+shape = SubResource("WorldBoundaryShape2D_syshm")
 
 [node name="Player" parent="." instance=ExtResource("1_n0qsc")]
-position = Vector2(204, 46)
+position = Vector2(665, 638)
 
-[node name="Walker" parent="." instance=ExtResource("2_dilhk")]
-position = Vector2(564, 93)
-attackDistance = 100.0
+[node name="Label" type="Label" parent="Player" node_paths=PackedStringArray("timer")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -300.996
+offset_right = 20.0
+offset_bottom = -277.996
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = ExtResource("4_syshm")
+script = ExtResource("5_rfktq")
+timer = NodePath("../../Level Timer")
 
-[node name="Walker2" parent="." instance=ExtResource("2_dilhk")]
-position = Vector2(476, 226)
-attackDistance = 100.0
+[node name="Enemy Spawner" type="Node" parent="." node_paths=PackedStringArray("levelTimer")]
+script = ExtResource("6_rfktq")
+levelTimer = NodePath("../Level Timer")
 
-[node name="Walker3" parent="." instance=ExtResource("2_dilhk")]
-position = Vector2(363, 247)
-attackDistance = 100.0
+[node name="Level Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 300.0
+one_shot = true
+autostart = true
 
-[node name="Walker4" parent="." instance=ExtResource("2_dilhk")]
-position = Vector2(237, 275)
-attackDistance = 100.0
+[node name="Walker" parent="." instance=ExtResource("7_0urlm")]
+position = Vector2(200, 143)
 
-[node name="Walker5" parent="." instance=ExtResource("2_dilhk")]
-position = Vector2(170, 284)
-attackDistance = 100.0
+[node name="Walker2" parent="." instance=ExtResource("7_0urlm")]
+position = Vector2(718, 165)
 
-[node name="Walker6" parent="." instance=ExtResource("2_dilhk")]
-position = Vector2(74, 209)
-attackDistance = 100.0
+[node name="Walker3" parent="." instance=ExtResource("7_0urlm")]
+position = Vector2(392, 372)
 
-[node name="Walker7" parent="." instance=ExtResource("2_dilhk")]
-position = Vector2(74, 209)
-attackDistance = 100.0
+[node name="Walker4" parent="." instance=ExtResource("7_0urlm")]
+position = Vector2(135, 438)
+
+[node name="Walker5" parent="." instance=ExtResource("7_0urlm")]
+position = Vector2(449, 193)
+
+[node name="Walker6" parent="." instance=ExtResource("7_0urlm")]
+position = Vector2(200, 143)
+
+[node name="Walker7" parent="." instance=ExtResource("7_0urlm")]
+position = Vector2(718, 165)
+
+[node name="Walker8" parent="." instance=ExtResource("7_0urlm")]
+position = Vector2(392, 372)
+
+[node name="Walker9" parent="." instance=ExtResource("7_0urlm")]
+position = Vector2(135, 438)
+
+[node name="Walker10" parent="." instance=ExtResource("7_0urlm")]
+position = Vector2(449, 193)

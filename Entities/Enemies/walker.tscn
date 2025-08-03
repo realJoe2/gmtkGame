@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://do5hjvbpwumhp"]
+[gd_scene load_steps=66 format=3 uid="uid://do5hjvbpwumhp"]
 
 [ext_resource type="PackedScene" uid="uid://daac2ps8j60pf" path="res://Entities/Enemies/enemy.tscn" id="1_wipqw"]
 [ext_resource type="Script" uid="uid://cfpx3uf4jic3t" path="res://Scripts/Walker.cs" id="2_f2k3p"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c1xotjgn0m08k" path="res://Assets/Sprites/Walker/walkerAttackBack/0003.png" id="5_dxm1i"]
 [ext_resource type="Texture2D" uid="uid://cnrfvwuia5ys8" path="res://Assets/Sprites/Walker/walkerWalkBack/0004.png" id="6_a1jve"]
 [ext_resource type="Texture2D" uid="uid://stbhtwfed80w" path="res://Assets/Sprites/Walker/walkerAttackBack/0004.png" id="6_sgmdr"]
+[ext_resource type="Texture2D" uid="uid://c2anc85y7jckn" path="res://Assets/Sprites/shadow.png" id="6_upvpk"]
 [ext_resource type="Texture2D" uid="uid://ch284848e37u3" path="res://Assets/Sprites/Walker/walkerWalkBack/0005.png" id="7_wumiu"]
 [ext_resource type="Texture2D" uid="uid://ss5jpekb2o8b" path="res://Assets/Sprites/Walker/walkerAttackBack/0005.png" id="7_yq0qc"]
 [ext_resource type="Texture2D" uid="uid://dgynt7114rnln" path="res://Assets/Sprites/Walker/walkerAttackBack/0006.png" id="8_gf7hk"]
@@ -65,6 +66,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mexbu"]
 radius = 29.0
 height = 114.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4g1cx"]
+radius = 67.0671
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v7bej"]
 animations = [{
@@ -272,14 +276,11 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4g1cx"]
-radius = 53.0094
-
 [node name="Walker" node_paths=PackedStringArray("sprite", "hurter", "walkerSounds") instance=ExtResource("1_wipqw")]
 script = ExtResource("2_f2k3p")
-attackDistance = 200.0
+attackDistance = 150.0
 moveSpeed = 1
-sprite = NodePath("AnimatedSprite2D")
+sprite = NodePath("Shadow/AnimatedSprite2D")
 hurter = NodePath("Hurtbox")
 walkerSounds = NodePath("AudioStreamPlayer2D")
 hit = ExtResource("3_sgmdr")
@@ -291,22 +292,28 @@ shape = SubResource("CapsuleShape2D_mexbu")
 [node name="Health Component" parent="." index="1" node_paths=PackedStringArray("sprite")]
 maxHealth = 2
 shake = true
-sprite = NodePath("../AnimatedSprite2D")
+sprite = NodePath("../Shadow/AnimatedSprite2D")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
-sprite_frames = SubResource("SpriteFrames_v7bej")
-animation = &"Death"
-frame_progress = 0.035573
-
-[node name="Hurtbox" parent="." index="3" instance=ExtResource("51_4g1cx")]
+[node name="Hurtbox" parent="." index="2" instance=ExtResource("51_4g1cx")]
 collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" index="0"]
 shape = SubResource("CircleShape2D_4g1cx")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="4"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="3"]
 stream = ExtResource("3_sgmdr")
+
+[node name="Shadow" type="Sprite2D" parent="." index="4"]
+position = Vector2(0, 46)
+texture = ExtResource("6_upvpk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Shadow" index="0"]
+position = Vector2(0, -46)
+sprite_frames = SubResource("SpriteFrames_v7bej")
+animation = &"AttackSide"
+frame = 7
+frame_progress = 1.0
 
 [connection signal="HealthDepleted" from="Health Component" to="." method="Death"]
 

@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://4mvv8p4nc6oq"]
+
+[ext_resource type="FontFile" uid="uid://uiuco3c74dl3" path="res://Assets/Fonts/upheavtt.ttf" id="1_aoipp"]
+
+[resource]
+font = ExtResource("1_aoipp")
+font_size = 130

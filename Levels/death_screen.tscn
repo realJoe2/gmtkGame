@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3cat5ioh3q3"]
+
+[ext_resource type="LabelSettings" uid="uid://4mvv8p4nc6oq" path="res://Assets/Label Settings/title.tres" id="1_132i1"]
+[ext_resource type="PackedScene" uid="uid://vuqadov1c3y" path="res://Components/level_changer.tscn" id="1_suh8j"]
+
+[node name="Death Screen" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -642.5
+offset_top = -364.0
+offset_right = 642.5
+offset_bottom = 364.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "YOU DIED"
+label_settings = ExtResource("1_132i1")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.5
+offset_top = 154.0
+offset_right = 32.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Go To Main Menu"
+
+[node name="LevelChanger" parent="." instance=ExtResource("1_suh8j")]
+nextLevelPath = "res://Levels/main_menu.tscn"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="button_up" from="Button" to="LevelChanger" method="Activate"]

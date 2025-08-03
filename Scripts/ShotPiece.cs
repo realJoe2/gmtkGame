@@ -5,6 +5,7 @@ public partial class ShotPiece : CircuitPiece
 {
     public override void _Ready()
     {
+        shot = (Shot) (GD.Randi() % 4);
         switch (shot)
         {
             case Shot.Bullet:
@@ -27,7 +28,7 @@ public partial class ShotPiece : CircuitPiece
                 break;
         }
     }
-    [Export] Shot shot;
+    Shot shot;
     public enum Shot
     {
         Bullet,

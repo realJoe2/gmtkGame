@@ -5,7 +5,8 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qatvv"]
 
-[node name="Bullet" instance=ExtResource("1_w2ibx")]
+[node name="Bullet" node_paths=PackedStringArray("hurtbox") instance=ExtResource("1_w2ibx")]
+hurtbox = NodePath("Hurtbox")
 
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
 anchors_preset = 8

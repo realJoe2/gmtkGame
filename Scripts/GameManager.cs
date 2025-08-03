@@ -17,6 +17,11 @@ public partial class GameManager : Node
     PackedScene nextLevel;
     public void ChangeLevel(string levelPath)
     {
+        if (levelPath == "quit")
+        {
+            GetTree().Quit();
+            return;
+        }
         currentLevelPath = levelPath;
         if (levelPath == null || levelPath == "" || !ResourceLoader.Exists(levelPath))
         {

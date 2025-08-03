@@ -3,7 +3,7 @@ using System;
 
 public partial class ModifierPiece : CircuitPiece
 {
-    [Export] Modifier type;
+    Modifier type;
     public enum Modifier
     {
         Damage,
@@ -12,6 +12,7 @@ public partial class ModifierPiece : CircuitPiece
     }
     public override void _Ready()
     {
+        type = (Modifier) (GD.Randi() % 2);
         label.Text = GetModifier();
     }
     public string GetModifier()

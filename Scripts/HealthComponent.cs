@@ -7,6 +7,8 @@ public partial class HealthComponent : Node
     [Export] bool shake;
     Timer shakeTimer;
     [Export] Node2D sprite;
+    [Export] Timer iframes;
+    bool canTakeDamage;
 
     int currentHealth;
     bool isDead = false;
@@ -33,8 +35,17 @@ public partial class HealthComponent : Node
     {
         if (isDead)
             return;
+        if (iframes != null)
+        {
+            if (iframes.TimeLeft > 0)
+                return;
+        }
+        
         shakeTimer.Start();
 
+        if (iframes != null)
+            iframes.Start();
+        
         currentHealth -= damage;
         if (currentHealth <= 0)
         {

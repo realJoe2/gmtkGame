@@ -151,7 +151,8 @@ texture = ExtResource("27_w8hnq")
 [node name="Player Sprite" type="AnimatedSprite2D" parent="Shadow"]
 position = Vector2(0, -46)
 sprite_frames = SubResource("SpriteFrames_prmdv")
-animation = &"WalkBack"
+animation = &"WalkSide"
+frame_progress = 0.88634
 
 [node name="Player Logic" type="Node" parent="." node_paths=PackedStringArray("circuit", "circuitButton", "sprite")]
 script = ExtResource("2_gb1tc")
@@ -167,10 +168,16 @@ sprite = NodePath("../Shadow/Player Sprite")
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_s1j76")
 
-[node name="Health Component" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("4_kee72")]
-maxHealth = 5
+[node name="Health Component" parent="." node_paths=PackedStringArray("sprite", "iframes") instance=ExtResource("4_kee72")]
+maxHealth = 3
 shake = true
 sprite = NodePath("../Shadow/Player Sprite")
+iframes = NodePath("iframes")
+
+[node name="iframes" type="Timer" parent="Health Component"]
+wait_time = 0.5
+one_shot = true
+autostart = true
 
 [node name="Hitbox" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("5_prmdv")]
 collision_layer = 8
@@ -194,7 +201,7 @@ circuitButton = NodePath("../ShowCircuitButton")
 wonderGun = NodePath("../WonderGun")
 
 [node name="LevelChanger" parent="." instance=ExtResource("33_vknsg")]
-nextLevelPath = "res://Levels/main_menu.tscn"
+nextLevelPath = "res://Levels/death_screen.tscn"
 
 [connection signal="HealthDepleted" from="Health Component" to="Player Logic" method="HealthDepleted"]
 [connection signal="HealthDepleted" from="Health Component" to="LevelChanger" method="Activate"]

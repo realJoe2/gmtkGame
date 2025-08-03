@@ -36,7 +36,6 @@ text = "Finish"
 
 [node name="Battery" parent="." instance=ExtResource("3_qehe1")]
 position = Vector2(2, 117)
-shot = 5
 onSprite = ExtResource("3_fegee")
 offSprite = ExtResource("3_fegee")
 
@@ -61,6 +60,7 @@ position = Vector2(27, -40)
 position = Vector2(-1, -25)
 
 [node name="Label" parent="Battery" index="4"]
+visible = false
 z_index = 0
 offset_left = -28.0
 offset_top = -31.0
@@ -69,19 +69,14 @@ offset_bottom = -8.0
 text = "Battery"
 label_settings = SubResource("LabelSettings_ehg8l")
 
-[node name="Shot Piece" parent="." instance=ExtResource("3_qehe1")]
-position = Vector2(-105, -14)
-shot = 1
-
-[node name="Effect Piece" parent="." instance=ExtResource("3_buxn6")]
-position = Vector2(137, -71)
-
 [node name="Modifier Piece" parent="." instance=ExtResource("3_f3t6b")]
 position = Vector2(-13, -91)
-type = 1
 
 [node name="Effect Piece2" parent="." instance=ExtResource("3_buxn6")]
 position = Vector2(157, 42)
+
+[node name="Shot Piece" parent="." instance=ExtResource("3_qehe1")]
+position = Vector2(-301, 31)
 
 [connection signal="button_up" from="Finish Button" to="." method="OnFinishButton"]
 
